@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quicknease</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/main_logo_.png" type="image/x-icon" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand d-flex align-items-center p-0 text-white">
+          <img src="./img/Logo.png" style="width: 100px; max-height: 82px;" alt="Logo" />
+        </a>
+      
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="service.html" class="nav-item nav-link">Services</a>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+          </div>
+      <div style="display: flex; justify-content: space-between;">
+          <button
+            class="btn btn-primary rounded-pill flex-shrink-0 py-2 px-4 me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#serviceRequestModal"
+            style="margin-left: -10px;"
+          >
+            Service Request
+          </button>
+      
+          <div class="d-none d-xl-flex me-3 align-items-center">
+            <div class="d-flex flex-column pe-3 border-end border-primary">
+              <span class="text-body">Get Repairing</span>
+              <!-- <a href="tel:+4733378901"><span class="text-primary">Free: + 0123 456 7890</span></a> -->
+            </div>
+          </div>
+      
+          <button
+            class="btn btn-primary btn-md-square d-flex flex-shrink-0 rounded-circle me-3"
+            data-bs-toggle="modal"
+            data-bs-target="#searchModal"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+          </div>
+
+        </div>
+      </nav>
+      
+      <!-- Modal for Service Request -->
+      <div class="modal fade" id="serviceRequestModal" tabindex="-1" aria-labelledby="serviceRequestModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-4 fw-bold">Add New Service Request</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="jobApplicationForm" class="row g-3">
+                <!-- User Info Fields -->
+                <div class="col-md-6">
+                  <label for="cust_phone" class="form-label">Phone Number</label>
+                  <input type="text" class="form-control" id="cust_phone" placeholder="Phone Number">
+                </div>
+                <div class="col-md-6">
+                  <label for="cust_email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="cust_email" placeholder="Email">
+                </div>
+                <div class="col-md-6">
+                  <label for="cust_first_name" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="cust_first_name" placeholder="First Name">
+                </div>
+                <!-- <div class="col-md-6">
+                  <label for="cust_middle_name" class="form-label">Middle Name</label>
+                  <input type="text" class="form-control" id="cust_middle_name" placeholder="Middle Name">
+                </div>
+                <div class="col-md-6">
+                  <label for="cust_last_name" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="cust_last_name" placeholder="Last Name">
+                </div> -->
+               
+                <div class="col-md-6">
+                  <label for="date_of_birth" class="form-label">Date of Birth</label>
+                  <input type="date" class="form-control" id="date_of_birth">
+                </div>
+                <div class="col-md-6">
+                  <label for="house_number" class="form-label">House Number</label>
+                  <input type="text" class="form-control" id="house_number" placeholder="House Number">
+                </div>
+                <div class="col-md-6">
+                  <label for="street_address" class="form-label">Street Address</label>
+                  <input type="text" class="form-control" id="street_address" placeholder="Street Address">
+                </div>
+                <div class="col-md-6">
+                  <label for="postal_code" class="form-label">Postal Code</label>
+                  <input type="text" class="form-control" id="postal_code" placeholder="Postal Code">
+                </div>
+                <div class="col-md-6">
+                  <label for="city" class="form-label">City</label>
+                  <input type="text" class="form-control" id="city" placeholder="City">
+                </div>
+                <div class="col-md-6">
+                  <label for="state" class="form-label">State</label>
+                  <input type="text" class="form-control" id="state" placeholder="State">
+                </div>
+                <div class="col-md-6">
+                  <label for="country" class="form-label">Country</label>
+                  <input type="text" class="form-control" id="country" placeholder="Country">
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                  <button type="submit" class="btn btn-primary w-75">
+                    Register Request
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Start -->
+      <div class="carousel-header">
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+            <li
+              data-bs-target="#carouselId"
+              data-bs-slide-to="0"
+              class="active"
+            ></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img
+                src="https://5.imimg.com/data5/SELLER/Default/2023/7/328314794/BB/ZZ/WU/5750967/water-purifier-repair-service.jpg"
+                class="img-fluid w-100"
+                alt="Image"
+              />
+              <div class="carousel-caption-1">
+                <div
+                  class="carousel-caption-1-content"
+                  style="max-width: 900px"
+                >
+                  <h4
+                    class="text-white text-uppercase fw-bold mb-4 fadeInLeft animated"
+                    data-animation="fadeInLeft"
+                    data-delay="1s"
+                    style="animation-delay: 1s"
+                    style="letter-spacing: 3px"
+                  >
+                    Keep Your Water Clean & Safe with Our Expert Repairs
+                  </h4>
+                  <h1
+                    class="display-2 text-capitalize text-white mb-4 fadeInLeft animated"
+                    data-animation="fadeInLeft"
+                    data-delay="1.3s"
+                    style="animation-delay: 1.3s"
+                  >
+                    Expert Water Purifier Repair Services for a Safe & Healthy
+                    Life
+                  </h1>
+                  <p
+                    class="mb-5 fs-5 text-white fadeInLeft animated"
+                    data-animation="fadeInLeft"
+                    data-delay="1.5s"
+                    style="animation-delay: 1.5s"
+                  >
+                    Fast & Reliable Water Purifier Repair Services at Your
+                    Doorstep
+                  </p>
+                  <div
+                    class="carousel-caption-1-content-btn fadeInLeft animated"
+                    data-animation="fadeInLeft"
+                    data-delay="1.7s"
+                    style="animation-delay: 1.7s"
+                  >
+                    <a
+                      class="btn btn-primary rounded-pill flex-shrink-0 py-3 px-5 me-2"
+                      href="#"
+                      >Repair Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel End -->
+    </div>
+
+    <!-- Navbar & Hero End -->
+
+    <!-- Modal Search Start -->
+    <div
+      class="modal fade"
+      id="searchModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h4 class="modal-title mb-0" id="exampleModalLabel">
+              Search by keyword
+            </h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body d-flex align-items-center">
+            <div class="input-group w-75 mx-auto d-flex">
+              <input
+                type="search"
+                class="form-control p-3"
+                placeholder="keywords"
+                aria-describedby="search-icon-1"
+              />
+              <span id="search-icon-1" class="input-group-text btn border p-3"
+                ><i class="fa fa-search text-white"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Search End -->
+
+    <!-- feature Start -->
+    <!-- <div class="container-fluid feature bg-light py-5">
+		<div class="container py-5">
+			<div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+				<h4 class="text-uppercase text-primary">Our Services</h4>
+				<h1 class="display-3 text-capitalize mb-3">Trusted Water Purifier Repair Services</h1>
+			</div>
+			<div class="row g-4">
+				<div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+					<div class="feature-item p-4">
+						<div class="feature-icon mb-3"><i class="fas fa-tools text-white fa-3x"></i></div>
+						<a href="#" class="h4 mb-3">Comprehensive Repair</a>
+						<p class="mb-3"> Use of high-quality OEM parts for reliable repairs.
+							optimal performance.</p>
+						<a href="#" class="btn text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+					<div class="feature-item p-4">
+						<div class="feature-icon mb-3"><i class="fas fa-filter text-white fa-3x"></i></div>
+						<a href="#" class="h4 mb-3">Filter Replacement</a>
+						<p class="mb-3">Ensure clean and safe drinking water with timely replacement of worn-out
+							filters.</p>
+						<a href="#" class="btn text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+					<div class="feature-item p-4">
+						<div class="feature-icon mb-3"><i class="fas fa-sync text-white fa-3x"></i></div>
+						<a href="#" class="h4 mb-3">Maintenance Services</a>
+						<p class="mb-3">Regular maintenance services to extend the life of your water purifier and
+							improve efficiency.</p>
+						<a href="#" class="btn text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+					<div class="feature-item p-4">
+						<div class="feature-icon mb-3"><i class="fas fa-check-circle text-white fa-3x"></i></div>
+						<a href="#" class="h4 mb-3">Quality Assurance</a>
+						<p class="mb-3">Our experts provide quality checks and diagnostics to ensure your purifier works
+							perfectly.</p>
+						<a href="#" class="btn text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+    <div class="container-fluid feature bg-light py-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.2s"
+          style="max-width: 800px"
+        >
+          <h4 class="text-uppercase text-primary">Our Services</h4>
+          <h1 class="display-3 text-capitalize mb-3">
+            Trusted Water Purifier Repair Services
+          </h1>
+        </div>
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <div
+              class="feature-item p-4 d-flex flex-column"
+              style="height: 100%"
+            >
+              <div class="feature-icon mb-3">
+                <i class="fas fa-tools text-white fa-3x"></i>
+              </div>
+              <a href="#" class="h4 mb-3">Comprehensive Repair</a>
+              <p class="mb-3">
+                Use of high-quality OEM parts for reliable repairs and optimal
+                performance.
+              </p>
+              <a href="#" class="btn text-secondary mt-auto"
+                >Read More <i class="fa fa-angle-right"></i
+              ></a>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.4s"
+          >
+            <div
+              class="feature-item p-4 d-flex flex-column"
+              style="height: 100%"
+            >
+              <div class="feature-icon mb-3">
+                <i class="fas fa-filter text-white fa-3x"></i>
+              </div>
+              <a href="#" class="h4 mb-3">Filter Replacement</a>
+              <p class="mb-3">
+                Ensure clean and safe drinking water with timely replacement of
+                worn-out filters.
+              </p>
+              <a href="#" class="btn text-secondary mt-auto"
+                >Read More <i class="fa fa-angle-right"></i
+              ></a>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.6s"
+          >
+            <div
+              class="feature-item p-4 d-flex flex-column"
+              style="height: 100%"
+            >
+              <div class="feature-icon mb-3">
+                <i class="fas fa-sync text-white fa-3x"></i>
+              </div>
+              <a href="#" class="h4 mb-3">Maintenance Services</a>
+              <p class="mb-3">
+                Regular maintenance services to extend the life of your water
+                purifier and improve efficiency.
+              </p>
+              <a href="#" class="btn text-secondary mt-auto"
+                >Read More <i class="fa fa-angle-right"></i
+              ></a>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.8s"
+          >
+            <div
+              class="feature-item p-4 d-flex flex-column"
+              style="height: 100%"
+            >
+              <div class="feature-icon mb-3">
+                <i class="fas fa-check-circle text-white fa-3x"></i>
+              </div>
+              <a href="#" class="h4 mb-3">Quality Assurance</a>
+              <p class="mb-3">
+                Our experts provide quality checks and diagnostics to ensure
+                your purifier works perfectly.
+              </p>
+              <a href="#" class="btn text-secondary mt-auto"
+                >Read More <i class="fa fa-angle-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- feature End -->
+
+    <!-- About Start -->
+    <div class="container-fluid about overflow-hidden py-5">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+            <div class="about-img rounded h-100">
+              <img
+                src="https://oditechrosystems.com/wp-content/uploads/2022/12/default-water-purifier-repair-and-services-aquaguard-4.jpg"
+                class="img-fluid rounded h-100 w-100"
+                style="object-fit: cover"
+                alt="Water Purifier"
+              />
+              <div class="about-exp"><span>20 Years of Experience</span></div>
+            </div>
+          </div>
+          <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+            <div class="about-item">
+              <h4 class="text-primary text-uppercase">About Us</h4>
+              <h1 class="display-3 mb-3">
+                We Provide Expert Water Purifier Repair Services
+              </h1>
+              <p class="mb-4">
+                With over 20 years of experience, we specialize in diagnosing
+                and repairing water purifiers to ensure you and your family have
+                access to safe and healthy drinking water.
+              </p>
+              <div class="bg-light rounded p-4 mb-4">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="d-flex">
+                      <div class="pe-4">
+                        <div
+                          class="rounded-circle bg-primary d-flex align-items-center justify-content-center"
+                          style="width: 80px; height: 80px"
+                        >
+                          <i class="fas fa-thumbs-up text-white fa-2x"></i>
+                        </div>
+                      </div>
+                      <div class="">
+                        <a href="#" class="h4 d-inline-block mb-3"
+                          >Satisfied Customers</a
+                        >
+                        <p class="mb-0">
+                          Thousands of happy clients trust us to repair their
+                          water purifiers and maintain high water quality.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <a href="#" class="btn btn-secondary rounded-pill py-3 px-5">Read More</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Fact Counter -->
+    <!-- Fact Counter -->
+    <div class="container-fluid counter py-5">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <div class="counter-item">
+              <div class="counter-item-icon mx-auto">
+                <i class="fas fa-smile fa-3x text-white"></i>
+              </div>
+              <h4 class="text-white my-4">Happy Clients</h4>
+              <div class="counter-counting">
+                <span class="text-white fs-2 fw-bold" data-toggle="counter-up"
+                  >1000</span
+                >
+                <span class="h1 fw-bold text-white">+</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.4s"
+          >
+            <div class="counter-item">
+              <div class="counter-item-icon mx-auto">
+                <i class="fas fa-wrench fa-3x text-white"></i>
+              </div>
+              <h4 class="text-white my-4">Repairs Completed</h4>
+              <div class="counter-counting">
+                <span class="text-white fs-2 fw-bold" data-toggle="counter-up"
+                  >1500</span
+                >
+                <span class="h1 fw-bold text-white">+</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.6s"
+          >
+            <div class="counter-item">
+              <div class="counter-item-icon mx-auto">
+                <i class="fas fa-users fa-3x text-white"></i>
+              </div>
+              <h4 class="text-white my-4">Technicians</h4>
+              <div class="counter-counting">
+                <span class="text-white fs-2 fw-bold" data-toggle="counter-up"
+                  >50</span
+                >
+                <span class="h1 fw-bold text-white">+</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.8s"
+          >
+            <div class="counter-item">
+              <div class="counter-item-icon mx-auto">
+                <i class="fas fa-heart fa-3x text-white"></i>
+              </div>
+              <h4 class="text-white my-4">Years Experience</h4>
+              <div class="counter-counting">
+                <span class="text-white fs-2 fw-bold" data-toggle="counter-up"
+                  >20</span
+                >
+                <span class="h1 fw-bold text-white">+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        t
+      </div>
+    </div>
+
+    <!-- Fact Counter -->
+
+    <!-- Service Start -->
+    <div class="container-fluid service bg-light overflow-hidden py-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.2s"
+          style="max-width: 800px"
+        >
+          <h4 class="text-uppercase text-primary">Our Services</h4>
+          <h1 class="display-3 text-capitalize mb-3">
+            Protect Your Family with Clean Water
+          </h1>
+        </div>
+        <div class="row gx-0 gy-4 align-items-center">
+          <!-- First Column of Services -->
+          <div class="col-lg-6 col-xl-4 wow fadeInLeft" data-wow-delay="0.2s">
+            <div class="service-item rounded p-4 mb-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex">
+                    <div class="service-content text-end">
+                      <a href="#" class="h4 d-inline-block mb-3"
+                        >Residential Purifier Repair</a
+                      >
+                      <p class="mb-0">
+                        Expert repair services for home water purifiers to
+                        ensure your family has access to safe, clean water.
+                      </p>
+                    </div>
+                    <div class="ps-4">
+                      <div class="service-btn">
+                        <i
+                          class="fas fa-hand-holding-water text-white fa-2x"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="service-item rounded p-4 mb-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex">
+                    <div class="service-content text-end">
+                      <a href="#" class="h4 d-inline-block mb-3"
+                        >Commercial Purifier Repair</a
+                      >
+                      <p class="mb-0">
+                        Reliable and fast repair services for water purifiers in
+                        offices, restaurants, and industrial settings.
+                      </p>
+                    </div>
+                    <div class="ps-4">
+                      <div class="service-btn">
+                        <i class="fas fa-industry text-white fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="service-item rounded p-4 mb-0">
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex">
+                    <div class="service-content text-end">
+                      <a href="#" class="h4 d-inline-block mb-3"
+                        >Filter Replacement</a
+                      >
+                      <p class="mb-0">
+                        Professional filter replacement to ensure your purifier
+                        provides fresh and clean water continuously.
+                      </p>
+                    </div>
+                    <div class="ps-4">
+                      <div class="service-btn">
+                        <i class="fas fa-filter text-white fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center Image -->
+          <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="bg-transparent">
+              <img
+                src="img/png-clipart-water-purifier-dipped-on-water-india-water-filter-water-purification-reverse-osmosis-kent-ro-systems-filter-world-storage-tank-thumbnail-removebg-preview.png"
+                class="img-fluid w-100"
+                alt="Water Purifier Repair"
+              />
+            </div>
+          </div>
+
+          <!-- Second Column of Services -->
+          <div class="col-lg-6 col-xl-4 wow fadeInRight" data-wow-delay="0.2s">
+            <div class="service-item rounded p-4 mb-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex">
+                    <div class="pe-4">
+                      <div class="service-btn">
+                        <i class="fas fa-sync-alt text-white fa-2x"></i>
+                      </div>
+                    </div>
+                    <div class="service-content">
+                      <a href="#" class="h4 d-inline-block mb-3"
+                        >Annual Maintenance</a
+                      >
+                      <p class="mb-0">
+                        Keep your water purifier running efficiently all year
+                        round with our annual maintenance contracts.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="service-item rounded p-4 mb-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex">
+                    <div class="pe-4">
+                      <div class="service-btn">
+                        <i class="fas fa-recycle text-white fa-2x"></i>
+                      </div>
+                    </div>
+                    <div class="service-content">
+                      <a href="#" class="h4 d-inline-block mb-3"
+                        >Water Quality Testing</a
+                      >
+                      <p class="mb-0">
+                        We provide comprehensive water quality testing services
+                        to ensure the purity of your drinking water.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="service-item rounded p-4 mb-0">
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex">
+                    <div class="pe-4">
+                      <div class="service-btn">
+                        <i class="fas fa-cogs text-white fa-2x"></i>
+                      </div>
+                    </div>
+                    <div class="service-content">
+                      <a href="#" class="h4 d-inline-block mb-3"
+                        >Custom Purification Solutions</a
+                      >
+                      <p class="mb-0">
+                        Tailored purification systems designed to meet your
+                        specific needs, whether residential or commercial.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service End -->
+
+    <!-- Blog Start -->
+    <div class="container-fluid blog pb-5">
+      <div class="container pb-5">
+        <div
+          class="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.2s"
+          style="max-width: 800px"
+        >
+          <h4 class="text-uppercase text-primary" style="margin-top: 45px">
+            Water Purifier Repair Blog
+          </h4>
+          <h1 class="display-3 text-capitalize mb-3">
+            Latest Tips & News on Water Purifier Maintenance
+          </h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="blog-item">
+              <div class="blog-img">
+                <img
+                  src="https://oditechrosystems.com/wp-content/uploads/2022/12/default-water-purifier-repair-and-services-aquaguard-4.jpg"
+                  class="img-fluid rounded-top w-100"
+                  alt="Water Purifier Repair Tips"
+                />
+                <div class="blog-date px-4 py-2">
+                  <i class="fa fa-calendar-alt me-1"></i> Jan 12, 2025
+                </div>
+              </div>
+              <div class="blog-content rounded-bottom p-4">
+                <a href="#" class="h4 d-inline-block mb-3"
+                  >5 Essential Water Purifier Maintenance Tips</a
+                >
+                <p>
+                  Learn the key steps to ensure your water purifier is running
+                  efficiently and providing safe drinking water.
+                </p>
+                <a href="#" class="fw-bold text-secondary"
+                  >Read More <i class="fa fa-angle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="blog-item">
+              <div class="blog-img">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9hzjm_-qN1UapnDPiUWvVwFlq_mCv_tlpJQ&s"
+                  class="img-fluid rounded-top w-100"
+                  alt="Signs Your Water Purifier Needs Repair"
+                />
+                <div class="blog-date px-4 py-2">
+                  <i class="fa fa-calendar-alt me-1"></i> Jan 12, 2025
+                </div>
+              </div>
+              <div class="blog-content rounded-bottom p-4">
+                <a href="#" class="h4 d-inline-block mb-3"
+                  >How to Identify When Your Water Purifier Needs Repair</a
+                >
+                <p>
+                  Noticing changes in water taste or flow? Find out the top
+                  signs that your purifier needs immediate attention.
+                </p>
+                <a href="#" class="fw-bold text-secondary"
+                  >Read More <i class="fa fa-angle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="blog-item">
+              <div class="blog-img">
+                <img
+                  src="https://images.jdmagicbox.com/comp/def_content/water_purifier_repair_and_services_aquaguard/default-water-purifier-repair-and-services-aquaguard-3.jpg"
+                  class="img-fluid rounded-top w-100"
+                  alt="Water Filter Replacement"
+                />
+                <div class="blog-date px-4 py-2">
+                  <i class="fa fa-calendar-alt me-1"></i> Jan 12, 2025
+                </div>
+              </div>
+              <div class="blog-content rounded-bottom p-4">
+                <a href="#" class="h4 d-inline-block mb-3"
+                  >Why Regular Filter Replacement is Crucial for Your Water
+                  Purifier</a
+                >
+                <p>
+                  Understand the importance of replacing your water purifier
+                  filters on time to maintain water quality and avoid costly
+                  repairs.
+                </p>
+                <a href="#" class="fw-bold text-secondary"
+                  >Read More <i class="fa fa-angle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+      <div class="container py-5">
+        <div class="row g-5 mb-5 align-items-center">
+          <div class="col-lg-7">
+            <div class="position-relative mx-auto">
+              <input
+                class="form-control rounded-pill w-100 py-3 ps-4 pe-5"
+                type="text"
+                placeholder="Subscribe for Water Purifier Tips"
+              />
+              <button
+                type="button"
+                class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div
+              class="d-flex align-items-center justify-content-center justify-content-lg-end"
+            >
+              <a
+                class="btn btn-secondary btn-md-square rounded-circle me-3"
+                href=""
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-secondary btn-md-square rounded-circle me-3"
+                href=""
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-secondary btn-md-square rounded-circle me-3"
+                href=""
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                class="btn btn-secondary btn-md-square rounded-circle me-0"
+                href=""
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5">
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <!-- <h3 class="text-white mb-4"><i class="fas fa-hand-holding-water text-primary me-3"></i> AquaFix</h3> -->
+              <h3 class="text-white mb-4">
+                <i class="fas fa-tools text-primary me-3"></i>Water Purifier
+                Services
+              </h3>
+              <p class="mb-3">
+                We provide top-notch water purifier repair and maintenance
+                services to ensure clean and safe drinking water for your
+                family.
+              </p>
+            </div>
+            <div class="position-relative">
+              <input
+                class="form-control rounded-pill w-100 py-3 ps-4 pe-5"
+                type="text"
+                placeholder="Enter your email"
+              />
+              <button
+                type="button"
+                class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-white mb-4">Services</h4>
+              <a href="#"
+                ><i class="fas fa-angle-right me-2"></i> Water Purifier
+                Repair</a
+              >
+              <a href="#"
+                ><i class="fas fa-angle-right me-2"></i> Filter Replacement</a
+              >
+              <a href="#"
+                ><i class="fas fa-angle-right me-2"></i> Maintenance Packages</a
+              >
+              <a href="#"
+                ><i class="fas fa-angle-right me-2"></i> Water Testing</a
+              >
+              <a href="#"
+                ><i class="fas fa-angle-right me-2"></i> Customer Support</a
+              >
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-white mb-4">Business Hours</h4>
+              <div class="mb-3">
+                <h6 class="text-muted mb-0">Mon - Friday:</h6>
+                <p class="text-white mb-0">09.00 am to 07.00 pm</p>
+              </div>
+              <div class="mb-3">
+                <h6 class="text-muted mb-0">Saturday:</h6>
+                <p class="text-white mb-0">10.00 am to 05.00 pm</p>
+              </div>
+              <div class="mb-3">
+                <h6 class="text-muted mb-0">Sunday:</h6>
+                <p class="text-white mb-0">Closed</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-white mb-4">Contact Info</h4>
+              <!-- <a href="#"
+                ><i class="fa fa-map-marker-alt me-2"></i> 456 Water St, Clean
+                City, USA</a
+              > -->
+              <a href="mailto:info@aquafix.com"
+                ><i class="fas fa-envelope me-2"></i> info@aquafix.com</a
+              >
+              <a href="tel:+012 345 67890"
+                ><i class="fas fa-phone me-2"></i> +012 345 67890</a
+              >
+              <a href="tel:+012 345 67890" class="mb-3"
+                ><i class="fas fa-print me-2"></i> +012 345 67890</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <!--  -->
+
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a
+      href="#"
+      class="btn btn-secondary btn-lg-square rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+      document
+        .getElementById("serviceRequestForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Clear previous messages
+          const formMessage = document.getElementById("formMessage");
+          formMessage.innerHTML = "";
+
+          // Get form data
+          const name = document.getElementById("name").value;
+          const custPhone = document.getElementById("cust_phone").value;
+          const customer = document.getElementById("customer").value;
+          const address = document.getElementById("address").value;
+          const device = document.getElementById("device").value;
+          const requestFor = document.getElementById("request_for").value;
+          const requestDetails =
+            document.getElementById("request_details").value;
+
+          // Create a data object
+          const data = {
+            name,
+            custPhone,
+            customer,
+            address,
+            device,
+            requestFor,
+            requestDetails,
+          };
+
+          // Send POST request using fetch
+          fetch("YOUR_API_ENDPOINT", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error("Something went wrong");
+              }
+            })
+            .then((data) => {
+              // Display success message
+              formMessage.innerHTML = `<div class="alert alert-success">Request submitted successfully!</div>`;
+              // Optionally clear form fields
+              document.getElementById("serviceRequestForm").reset();
+            })
+            .catch((error) => {
+              // Display error message
+              formMessage.innerHTML = `<div class="alert alert-danger">Error: ${error.message}</div>`;
+            });
+        });
+    </script>
+  </body>
+</html>
